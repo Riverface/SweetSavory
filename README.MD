@@ -51,5 +51,4 @@ Copyright (c) 2020 Robert Smith
 
 This software is licensed under Creative Commons 0 license. Use however you want, in fact please do not credit me.# SweetSavory
 
-# SweetSavory
 
