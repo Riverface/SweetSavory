@@ -1,0 +1,24 @@
+@{
+    Layout = "_Layout";
+}
+
+@using SweetSavory.ViewModels
+
+@model RegisterViewModel
+
+<h2>Register a new user</h2>
+<hr/>
+@using (Html.BeginForm("Register", "Accounts"))
+{
+    @Html.LabelFor(model=>model.Email)
+    @Html.TextBoxFor(model=>model.Email)
+
+    @Html.LabelFor(Model=>Model.Password)
+    @Html.PasswordFor(Model=>Model.Password)
+    
+    @Html.LabelFor(Model=>Model.ConfirmPassword)
+    @Html.PasswordFor(Model=>Model.ConfirmPassword)
+
+    <input type="submit" value="Register"/>
+
+}

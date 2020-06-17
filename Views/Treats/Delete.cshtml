@@ -1,0 +1,23 @@
+@{
+  Layout = "_Layout";
+}
+
+@model SweetSavory.Models.Treat
+
+
+<div>
+  <div class='entryLabel'>
+
+
+<h2>Are you sure you want to delete this?</h2>
+  </div>
+  <div class='entry' style="height: 100px;">
+
+    @Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)
+    @using (Html.BeginForm())
+    {
+        <input type="submit" value="Delete" />
+    }
+
+  </div>
+</div>

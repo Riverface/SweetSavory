@@ -1,0 +1,23 @@
+@{
+Layout = "_Layout";
+}
+
+@model SweetSavory.Models.Flavor
+
+<div>
+  <div class='entryLabel'>
+    <h2>Edit this Flavor: @Html.DisplayFor(model => model.Name)
+    </h2>
+  </div>
+  <div class='entry'>
+
+    @using (Html.BeginForm())
+    {
+      @Html.HiddenFor(model => model.FlavorId)
+      @Html.LabelFor(model => model.Name)
+      @Html.EditorFor(model => model.Name)
+      <input type="submit" value="Save" />
+    }
+
+  </div>
+</div>

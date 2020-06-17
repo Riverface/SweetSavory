@@ -1,0 +1,39 @@
+@{
+  Layout = "_Layout";
+}
+
+@using SweetSavory.Models;
+@model List<SweetSavory.Models.Flavor>;
+
+<div class='jumbotron'>
+ <h1>Flavors</h1>
+
+</div>
+<div>
+
+  <div class='entryLabel'>
+    <h2>
+      Index
+    </h2> 
+  </div>
+  <div class='entry'>
+
+    @if (@Model.Count == 0)
+    {
+      <h3>No Flavors have been added yet!</h3>
+    } 
+
+    @foreach (Flavor Flavor in Model)
+    {
+      <li>@Html.ActionLink($"{Flavor.Name}", "Details", new { id = Flavor.FlavorId })</li>
+    }
+
+    @if(User.Identity.IsAuthenticated)
+    {
+      
+    <p>@Html.ActionLink("Add new Flavor", "Create")</p>
+
+    }
+
+  </div>
+</div>
