@@ -3,15 +3,15 @@
 }
 @using System.Security.Claims
 
-    <div class="jumbotron">
-       <h2> Pierre's Sweet & Savory Bakery</h2>
-    </div>
-<div>
+<div class="jumbotron">
+    <h2> Pierre's Sweet & Savory Bakery</h2>
+</div>
 
+<div>
     <div class='entryLabel'>
         <h2>Your Account</h2>
-
     </div>
+    
     @if(User.Identity.IsAuthenticated)
     {
         <div class='entry' style="height: 100px;">

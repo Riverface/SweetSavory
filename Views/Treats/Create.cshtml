@@ -1,23 +1,21 @@
 @{
-Layout = "_Layout";
+  Layout = "_Layout";
 }
 
 @model SweetSavory.Models.Treat
-<div class='entryLabel'>
+<div>
 
-  <h4>Add a new Treat</h4>
-</div>
+  <div class='entryLabel'>
+    <h4>Add a new Treat</h4>
+  </div>
 
-<div class='entry'>
-
-  @using (Html.BeginForm())
-  {
-    @Html.LabelFor(model => model.Description)
-    @Html.TextBoxFor(model => model.Description)
-    @* @Html.LabelFor(model => model.Flavor) *@
-    @Html.DropDownList("FlavorId")
-    <input type="submit" value="Add new Treat" class="btn btn-default" />
-  }
+  <div class='entry'>
+    @using (Html.BeginForm())
+    {
+      @Html.LabelFor(model => model.Description)
+      @Html.TextBoxFor(model => model.Description, new{@required = "required"})
+      @Html.DropDownList("FlavorId")
+      <input type="submit" value="Add new Treat" class="btn btn-default" />
+    }
+  </div>
 </div>
-</div>
-<p>@Html.ActionLink("Show all Treats", "Index")</p>

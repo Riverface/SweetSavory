@@ -1,5 +1,5 @@
 @{
-Layout = "_Layout";
+  Layout = "_Layout";
 }
 
 @model SweetSavory.Models.Flavor
@@ -15,7 +15,7 @@ Layout = "_Layout";
     {
       @Html.HiddenFor(model => model.FlavorId)
       @Html.LabelFor(model => model.Name)
-      @Html.EditorFor(model => model.Name)
+      @Html.EditorFor(model => model.Name, new{htmlAttributes = new{  @required = "required"}})
       <input type="submit" value="Save" />
     }
 

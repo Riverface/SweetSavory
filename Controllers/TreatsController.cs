@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 
 namespace SweetSavory.Controllers
 {
-
     public class TreatsController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
@@ -40,9 +39,6 @@ namespace SweetSavory.Controllers
         [HttpPost]
         public async Task<ActionResult> Create(Treat treat, int flavorId)
         {
-            var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            var currentUser = await _userManager.FindByIdAsync(userId);
-            treat.User = currentUser;
             _db.Treats.Add(treat);
             if (flavorId != 0)
             {

@@ -1,5 +1,5 @@
 @{
-Layout = "_Layout";
+  Layout = "_Layout";
 }
 
 @model SweetSavory.Models.Flavor
@@ -8,15 +8,14 @@ Layout = "_Layout";
 
   <div class='entryLabel'>
     <h4>Add a new Flavor</h4>
-
   </div>
   <div class='entry'>
 
     @using (Html.BeginForm())
     {
       @Html.LabelFor(model => model.Name)
-      @Html.TextBoxFor(model => model.Name)
-      <input type="submit" value="Add new Flavor" />
+      @Html.TextBoxFor(model => model.Name, new{@required = "required"})
+      <input type="submit" value="Add new Flavor"/>
     }
   </div>
 </div>

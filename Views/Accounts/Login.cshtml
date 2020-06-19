@@ -1,9 +1,10 @@
 @{
     Layout  = "_Layout";
 }
-@using SweetSavory.ViewModels
 
+@using SweetSavory.ViewModels
 @model LoginViewModel
+
 <div style="">
 <div class='entryLabel'>
 
@@ -14,13 +15,11 @@
 </div>
 @using (Html.BeginForm())
 {
-
-    <div class="entry" style="height: 150px;" >
-        
-    @Html.LabelFor(model=>model.Email)
-    @Html.TextBoxFor(model=>model.Email)
-    @Html.LabelFor(Model=>Model.Password)
-    @Html.PasswordFor(Model=>Model.Password)
+    <div class="entry" style="height: 150px;" >       
+        @Html.LabelFor(model=>model.Email)
+        @Html.TextBoxFor(model=>model.Email)
+        @Html.LabelFor(Model=>Model.Password)
+        @Html.PasswordFor(Model=>Model.Password)
         <input type="submit" value="Log in" class="btn btn-default"/>
     </div>
 }

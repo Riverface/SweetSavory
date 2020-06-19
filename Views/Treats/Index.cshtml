@@ -1,5 +1,5 @@
 @{
-Layout = "_Layout";
+  Layout = "_Layout";
 }
 
 @using SweetSavory.Models;
@@ -13,22 +13,21 @@ Layout = "_Layout";
 
         @if (Model.Any())
         {
-        <ul>
-          @foreach (Treat Treat in Model)
-          {
-            <li>@Html.ActionLink($"{Treat.Description}", "Details", new { id = Treat.TreatId })</li>
-          }
-        </ul>
+          <ul>
+            @foreach (Treat Treat in Model)
+            {
+              <li>@Html.ActionLink($"{Treat.Description}", "Details", new { id = Treat.TreatId })</li>
+            }
+          </ul>
         }
         else
         {
           <h3>No Treats have been added yet!</h3>
         }
-
     </div>
   </div>
+
   <div>
-    
       @if(User.Identity.IsAuthenticated)
       {
         <div class='entryLabel propertyLabel'>
@@ -39,5 +38,4 @@ Layout = "_Layout";
           <p>@Html.ActionLink("Home", "Index", "Home")</p>
         </div>
       }
-      
   </div>

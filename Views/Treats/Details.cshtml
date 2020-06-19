@@ -4,9 +4,8 @@
 
 @model SweetSavory.Models.Treat
 <div>
-
-<div class="entryLabel">
-<h2>Treat Details</h2>
+  <div class="entryLabel">
+  <h2>Treat Details</h2>
 </div>
   
 <div class='entry'>
@@ -30,14 +29,12 @@
         @Html.Hidden("joinId", @join.FlavorTreatId)
         if(User.Identity.IsAuthenticated)
         {
-
-        < input type="submit" value="Delete" />
+          <input type="submit" value="Delete" />
         }
       }
     }
     </ul>
   }
-
 </div>
 
 <div>
@@ -46,7 +43,6 @@
       <div class='propertyLabel entryLabel'>
         Do something to this Treat:
       </div>
-
       <div class='property' style="height: auto;">
         <div>
           <p>@Html.ActionLink("Add a Flavor", "AddFlavor", new { id = Model.TreatId })</p>

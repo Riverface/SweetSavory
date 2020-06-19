@@ -4,20 +4,19 @@
 
 @model SweetSavory.Models.Flavor
 <div>
-
   <div class='entryLabel'>
-   <h2>
-    Delete
-   </h2>
+    <h2>
+      Delete
+    </h2>
   </div>
   <div class="entry">
-
-    <h2>Are you sure you want to delete this?</h2>
-
+    <h2>
+      Are you sure you want to delete this?
+    </h2>
     @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
     @using (Html.BeginForm())
     {
-        <input type="submit" value="Delete" />
+      <input type="submit" value="Delete" />
     }
   </div>
 </div>

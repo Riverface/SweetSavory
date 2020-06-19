@@ -6,21 +6,16 @@
 
 <div>
   <div class='entryLabel'>
-<h4>Edit this Treat: @Html.DisplayFor(model => model.Description)</h4>
-
-
+    <h4>Edit this Treat: @Html.DisplayFor(model => model.Description)</h4>
   </div>
-  <div class='entry'>
-    
+
+  <div class='entry'>  
     @using (Html.BeginForm())
     {
         @Html.HiddenFor(model => model.TreatId)
         @Html.LabelFor(model => model.Description)
-        @Html.EditorFor(model => model.Description)
+        @Html.EditorFor(model => model.Description, new{htmlAttributes = new{  @required = "required"}})
         <input type="submit" value="Save" />
     }
-
   </div>
 </div>
-
-<p>@Html.ActionLink("Back to list", "Index")</p>
