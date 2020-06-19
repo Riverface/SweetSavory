@@ -31,13 +31,13 @@ Layout = "_Layout";
     
       @if(User.Identity.IsAuthenticated)
       {
-    <div class='entryLabel propertyLabel'>
-      Treats menu
-    </div>
-    <div class='property'>
-      <p>@Html.ActionLink("Add new Treat", "Create")</p>
-      <p>@Html.ActionLink("Home", "Index", "Home")</p>
-    </div>
+        <div class='entryLabel propertyLabel'>
+          Treats menu
+        </div>
+        <div class='property'>
+          <p>@Html.ActionLink("Add new Treat", "Create")</p>
+          <p>@Html.ActionLink("Home", "Index", "Home")</p>
+        </div>
       }
       
   </div>

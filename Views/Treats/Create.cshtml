@@ -12,13 +12,11 @@ Layout = "_Layout";
 
   @using (Html.BeginForm())
   {
-  @Html.LabelFor(model => model.Description)
-  @Html.TextBoxFor(model => model.Description)
-
-  @* @Html.LabelFor(model => model.Flavor) *@
-  @Html.DropDownList("FlavorId")
-
-  <input type="submit" value="Add new Treat" class="btn btn-default" />
+    @Html.LabelFor(model => model.Description)
+    @Html.TextBoxFor(model => model.Description)
+    @* @Html.LabelFor(model => model.Flavor) *@
+    @Html.DropDownList("FlavorId")
+    <input type="submit" value="Add new Treat" class="btn btn-default" />
   }
 </div>
 </div>

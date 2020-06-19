@@ -38,16 +38,16 @@ Layout = "_Layout";
     }
   </div>
 </div>
-@if(User.Identity.IsAuthenticated)
-{
-<div class='entryLabel propertyLabel'>
-  Flavor Links
-</div>
+  @if(User.Identity.IsAuthenticated)
+  {
+    <div class='entryLabel propertyLabel'>
+      Flavor Links
+    </div>
 
-<div class='property'>
-  <p>@Html.ActionLink("Back to Flavors", "Index")</p>
-  <p>@Html.ActionLink("Edit Flavor", "Edit", new { id = Model.FlavorId })</p>
-  <p>@Html.ActionLink("Delete Flavor", "Delete", new { id = Model.FlavorId })</p>
-</div>
-}
+    <div class='property'>
+      <p>@Html.ActionLink("Back to Flavors", "Index")</p>
+      <p>@Html.ActionLink("Edit Flavor", "Edit", new { id = Model.FlavorId })</p>
+      <p>@Html.ActionLink("Delete Flavor", "Delete", new { id = Model.FlavorId })</p>
+    </div>
+  }
 </div>
