@@ -27,11 +27,11 @@
     {
       <li>@Html.ActionLink($"{Flavor.Name}", "Details", new { id = Flavor.FlavorId })</li>
     }
-
+    
     @if(User.Identity.IsAuthenticated)
     {
       
-    <p>@Html.ActionLink("Add new Flavor", "Create")</p>
+     <p>@Html.ActionLink("Add new Flavor", "Create")</p>
 
     }
 

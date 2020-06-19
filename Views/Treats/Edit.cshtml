@@ -14,13 +14,13 @@
 
 
 
-@using (Html.BeginForm())
-{
-    @Html.HiddenFor(model => model.TreatId)
-    @Html.LabelFor(model => model.Description)
-    @Html.EditorFor(model => model.Description)
-    <input type="submit" value="Save" />
-}
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.TreatId)
+        @Html.LabelFor(model => model.Description)
+        @Html.EditorFor(model => model.Description)
+        <input type="submit" value="Save" />
+    }
 
   </div>
 </div>

@@ -20,21 +20,16 @@
     <div class='property'>
       <p>@Html.ActionLink("See all Flavors", "Index", "Flavors")</p>
       <p>@Html.ActionLink("See all Treats", "Index", "Treats")</p>
-      
       @if(User.Identity.IsAuthenticated)
       {
         @Html.ActionLink("Account", "Index","Accounts")
-
       }
       else{
-
-        @Html.ActionLink("Log In", "Login","Accounts")
-        @Html.ActionLink("Register", "Register","Accounts")
-      }
-      @Html.ActionLink("Home", "Index", "Home")
-      
-    </div>
-  </p>
+            <P>@Html.ActionLink("Log In", "Login","Accounts")</P>
+            <P>@Html.ActionLink("Register", "Register","Accounts")</P>
+          }
+      </div>
+      </p>
 </footer>
 
 </html>

@@ -10,44 +10,45 @@
 </div>
   
 <div class='entry'>
-<hr />
-<h3>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</h3>
-
-
-@if(@Model.Flavors.Count == 0)
-{
-  <p>This Treat does not belong to any Flavors</p>
-}
-else
-{
-
-
-  <h4>Flavors the Treat belongs to:</h4>
-  <ul>
-  @foreach(var join in Model.Flavors)
+  <hr />
+  <h3>
+    @Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)
+  </h3>
+  @if(@Model.Flavors.Count == 0)
   {
-    <li>@join.Flavor.Name</li>
-    @using (Html.BeginForm("DeleteFlavor", "Treats"))
-    {
-      @Html.Hidden("joinId", @join.FlavorTreatId)
-      <input type="submit" value="Delete"/>
-    }
+    <p>This Treat does not belong to any Flavors</p>
   }
-  </ul>
-}
+  else
+  {
+    <h4>Flavors the Treat belongs to:</h4>
+    <ul>
+    @foreach(var join in Model.Flavors)
+    {
+      <li>@join.Flavor.Name</li>
+      @using (Html.BeginForm("DeleteFlavor", "Treats"))
+      {
+        @Html.Hidden("joinId", @join.FlavorTreatId)
+        <input type="submit" value="Delete" />
+      }
+    }
+    </ul>
+  }
 
 </div>
+
 <div>
+    @if(User.Identity.IsAuthenticated)
+    {
+      <div class='propertyLabel entryLabel'>
+        Do something to this Treat:
+      </div>
 
-  <div class=' propertyLabel entryLabel'>
-  Do something to this Treat:
-  </div>
-  <div class='property '>
-
-
-  <p>@Html.ActionLink("Back to list", "Index")</p>
-  <p>@Html.ActionLink("Edit Treat", "Edit", new { id = Model.TreatId })</p>
-  <p>@Html.ActionLink("Add a Flavor", "AddFlavor", new { id = Model.TreatId })</p>
-  <p>@Html.ActionLink("Delete Treat", "Delete", new { id = Model.TreatId })</p>
-  </div>
+      <div class='property' style="height: auto;">
+        <div>
+          <p>@Html.ActionLink("Add a Flavor", "AddFlavor", new { id = Model.TreatId })</p>
+          <p>@Html.ActionLink("Delete Treat", "Delete", new { id = Model.TreatId })</p>
+          <p>@Html.ActionLink("Edit Treat", "Edit", new { id = Model.TreatId })</p>
+        </div>
+      </div>
+    }
 </div>

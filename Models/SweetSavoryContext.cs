@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+
 namespace SweetSavory.Models
 {
     public class SweetSavoryContext : IdentityDbContext<ApplicationUser>
