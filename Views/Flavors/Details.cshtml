@@ -32,7 +32,7 @@ Layout = "_Layout";
       <ul>
       @foreach(var join in Model.Treats)
       {
-        @Html.ActionLink(@join.Treat.Description, "Details", "Treats", new {id=join.TreatId})
+        <li>@Html.ActionLink(@join.Treat.Description, "Details", "Treats", new {id=join.TreatId})</li>
       }
     </ul>
     }
